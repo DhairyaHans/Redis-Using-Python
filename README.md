@@ -1,13 +1,20 @@
-# Running Redis using Docker Container
+# HOW TO USE RUN ->
 
-## STEPS ->
+## Step 1. 
+Run the FastAPI App present in the python-backend folder, 
+using the following command inside the python-backend folder ->
+    fastapi dev /src/app.py
 
-### 1. Run the command -> 
-    docker run --name my-redis -d -p 6379:6379 redis
- It will run a container on port 6379, having redis running
+## Step 2.
+Inside another terminal, goto the python-worker folder,
+Run the worker code, using the following command ->
+    python /src/main.py
 
-### 2.  Go Inside the Container, running the Redis to access the Redis-cli ->
-    docker exec -it <container_id> /bin/bash
+## Step 3.
+To push the data inside the Redis Queue, use the fastapi endpoint
 
-### 3. Start the Redis CLI ->
-    redis-cli
+## Step 4.
+The Worker code will automatically pop the data from the Redis queue
+
+## Step 5.
+You can scale the workers, by running the worker code in multiple terminals

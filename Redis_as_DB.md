@@ -38,5 +38,9 @@ We use HSET/HGET/HDEL for such usecases, where H stands for "Hash"
 ## Dummy command for HDEL ->
     HDEL user:100 age
 
+## HGETALL ->
+Returns all the data for a particular Hash Key
+    HGETALL user:100
+
 
 
